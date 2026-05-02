@@ -1,0 +1,57 @@
+{
+  "name": "Mira — AI Data Tutor",
+  "short_name": "Mira",
+  "description": "Learn SQL, Python, Power BI & Excel with your AI tutor. 500+ real interview questions.",
+  "start_url": "/app.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f0f0f8",
+  "theme_color": "#7c3aed",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mira AI Chat"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chat with Mira",
+      "short_name": "Chat",
+      "description": "Ask Mira anything about data analytics",
+      "url": "/app.html#chat",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Practice Mode",
+      "short_name": "Practice",
+      "description": "Solve data challenges",
+      "url": "/app.html#practice",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Interview Prep",
+      "short_name": "Interview",
+      "description": "Mock interview practice",
+      "url": "/app.html#interview",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

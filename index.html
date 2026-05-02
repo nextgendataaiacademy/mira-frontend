@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="NextGen Data AI Academy — Learn SQL, Python, Power BI, Excel with Mira your AI tutor. Get job-ready in 90 days."/>
+<meta name="keywords" content="data analytics course, SQL tutorial, Power BI training, Python for data, AI tutor India"/>
+<meta property="og:title" content="NextGen Data AI Academy — AI-Powered Data Learning"/>
+<meta property="og:description" content="Learn SQL, Python, Power BI & Excel with Mira — your personal AI tutor. 500+ real interview questions. Job-ready in 90 days."/>
+<title>NextGen Data AI Academy — Learn Data Analytics with AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0d0d1a;
+  --purple: #6c2bd9;
+  --purple-light: #9f5bf5;
+  --purple-glow: #c084fc;
+  --mint: #00d4aa;
+  --gold: #f5a623;
+  --bg: #f7f5ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --border: #e8e0ff;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--ink); overflow-x:hidden; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 6%; background:rgba(247,245,255,0.85);
+  backdrop-filter:blur(20px); border-bottom:1px solid var(--border);
+}
+.nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:18px; color:var(--purple); letter-spacing:-0.5px; }
+.nav-logo span { color:var(--ink); }
+.nav-links { display:flex; align-items:center; gap:32px; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover { color:var(--purple); }
+.nav-cta {
+  background:var(--purple); color:#fff; padding:10px 22px;
+  border-radius:100px; font-size:14px; font-weight:600;
+  text-decoration:none; transition:all 0.2s; white-space:nowrap;
+}
+.nav-cta:hover { background:var(--purple-light); transform:translateY(-1px); box-shadow:0 8px 24px rgba(108,43,217,0.3); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; text-align:center; padding:120px 6% 80px;
+  position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,43,217,0.12) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,212,170,0.08) 0%, transparent 60%);
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff; border:1.5px solid var(--border); border-radius:100px;
+  padding:8px 18px; font-size:13px; font-weight:500; color:var(--purple);
+  margin-bottom:28px; position:relative; z-index:1;
+  animation:fadeUp 0.6s ease both;
+}
+.badge-dot { width:7px; height:7px; background:var(--mint); border-radius:50%; }
+.hero h1 {
+  font-family:'Syne',sans-serif; font-size:clamp(42px,8vw,80px);
+  font-weight:800; line-height:1.05; letter-spacing:-2px;
+  position:relative; z-index:1;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 .purple { color:var(--purple); }
+.hero h1 .accent {
+  position:relative; display:inline-block;
+  background:linear-gradient(135deg,var(--purple),var(--purple-glow));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero-sub {
+  font-size:clamp(16px,2.5vw,20px); color:var(--muted); max-width:560px;
+  line-height:1.65; margin:24px auto 40px; position:relative; z-index:1;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-btns {
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  position:relative; z-index:1;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.btn-primary {
+  background:var(--purple); color:#fff; padding:16px 36px;
+  border-radius:100px; font-size:16px; font-weight:600;
+  text-decoration:none; transition:all 0.25s; display:inline-flex; align-items:center; gap:8px;
+}
+.btn-primary:hover { background:var(--purple-light); transform:translateY(-2px); box-shadow:0 12px 32px rgba(108,43,217,0.35); }
+.btn-secondary {
+  background:transparent; color:var(--purple); padding:16px 36px;
+  border-radius:100px; font-size:16px; font-weight:600;
+  text-decoration:none; border:2px solid var(--border); transition:all 0.25s;
+}
+.btn-secondary:hover { border-color:var(--purple); background:#f0eeff; }
+.hero-stats {
+  display:flex; gap:40px; justify-content:center; flex-wrap:wrap;
+  margin-top:64px; position:relative; z-index:1;
+  animation:fadeUp 0.7s 0.4s ease both;
+}
+.stat { text-align:center; }
+.stat-num { font-family:'Syne',sans-serif; font-size:32px; font-weight:800; color:var(--purple); }
+.stat-label { font-size:13px; color:var(--muted); margin-top:4px; }
+
+/* ── MIRA PREVIEW ── */
+.mira-preview {
+  background:var(--card); border-radius:24px; padding:20px;
+  box-shadow:0 32px 80px rgba(108,43,217,0.15); border:1.5px solid var(--border);
+  max-width:420px; width:100%; margin:56px auto 0; position:relative; z-index:1;
+  animation:fadeUp 0.8s 0.5s ease both;
+}
+.preview-header {
+  display:flex; align-items:center; gap:12px;
+  padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:14px;
+}
+.mira-avatar {
+  width:40px; height:40px; border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--purple-light));
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px;
+}
+.preview-name { font-weight:700; font-size:14px; }
+.preview-sub { font-size:11px; color:var(--muted); }
+.preview-badge { background:#d1fae5; color:#065f46; font-size:10px; font-weight:700; padding:3px 10px; border-radius:100px; margin-left:auto; }
+.preview-msg {
+  background:#f8f7ff; border-radius:14px; padding:13px 15px;
+  font-size:13px; line-height:1.6; color:var(--ink); margin-bottom:10px;
+}
+.preview-chip {
+  display:inline-flex; align-items:center; gap:6px;
+  background:#f0eeff; color:var(--purple); border-radius:100px;
+  padding:6px 14px; font-size:12px; font-weight:600; margin:4px;
+  cursor:pointer; transition:all 0.2s;
+}
+.preview-chip:hover { background:var(--purple); color:#fff; }
+
+/* ── SECTION COMMON ── */
+section { padding:96px 6%; }
+.section-tag {
+  display:inline-block; background:#f0eeff; color:var(--purple);
+  border-radius:100px; padding:6px 16px; font-size:12px; font-weight:700;
+  letter-spacing:0.5px; text-transform:uppercase; margin-bottom:16px;
+}
+.section-h {
+  font-family:'Syne',sans-serif; font-size:clamp(32px,5vw,52px);
+  font-weight:800; letter-spacing:-1.5px; line-height:1.1;
+}
+.section-sub { font-size:18px; color:var(--muted); line-height:1.6; max-width:560px; margin-top:14px; }
+
+/* ── FEATURES ── */
+.features { background:#fff; }
+.features-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px; margin-top:56px;
+}
+.feature-card {
+  background:var(--bg); border-radius:20px; padding:28px;
+  border:1.5px solid var(--border); transition:all 0.25s;
+  position:relative; overflow:hidden;
+}
+.feature-card:hover { border-color:var(--purple); transform:translateY(-4px); box-shadow:0 16px 48px rgba(108,43,217,0.12); }
+.feature-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--purple),var(--purple-glow));
+  opacity:0; transition:opacity 0.25s;
+}
+.feature-card:hover::before { opacity:1; }
+.feature-ico {
+  width:52px; height:52px; border-radius:16px;
+  background:linear-gradient(135deg,var(--purple),var(--purple-light));
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; margin-bottom:18px;
+}
+.feature-h { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; margin-bottom:8px; }
+.feature-p { font-size:14px; color:var(--muted); line-height:1.6; }
+
+/* ── TOPICS ── */
+.topics-grid {
+  display:flex; flex-wrap:wrap; gap:12px; margin-top:48px;
+}
+.topic-pill {
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border:1.5px solid var(--border); border-radius:100px;
+  padding:10px 20px; font-size:14px; font-weight:500;
+  transition:all 0.2s; cursor:default;
+}
+.topic-pill:hover { border-color:var(--purple); color:var(--purple); transform:translateY(-2px); box-shadow:0 8px 20px rgba(108,43,217,0.1); }
+
+/* ── PRICING ── */
+.pricing { background:#fff; }
+.pricing-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px; margin-top:56px; max-width:800px;
+}
+.price-card {
+  background:var(--bg); border-radius:24px; padding:36px;
+  border:2px solid var(--border); position:relative;
+}
+.price-card.popular {
+  background:linear-gradient(135deg,var(--purple),var(--purple-light));
+  border-color:transparent; color:#fff;
+}
+.popular-tag {
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:#000; font-size:11px; font-weight:800;
+  padding:4px 16px; border-radius:100px; white-space:nowrap; letter-spacing:0.5px;
+}
+.price-name { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; margin-bottom:8px; }
+.price-amount { font-family:'Syne',sans-serif; font-size:48px; font-weight:800; line-height:1; }
+.price-period { font-size:14px; opacity:0.7; margin-top:4px; }
+.price-divider { height:1px; background:rgba(255,255,255,0.2); margin:24px 0; }
+.price-divider-dark { height:1px; background:var(--border); margin:24px 0; }
+.price-feature { display:flex; align-items:center; gap:10px; font-size:14px; margin-bottom:12px; }
+.price-feature .check { color:var(--mint); font-weight:800; }
+.price-feature .check-white { color:#fff; font-weight:800; }
+.price-btn {
+  display:block; text-align:center; padding:14px; border-radius:100px;
+  font-size:15px; font-weight:700; text-decoration:none; margin-top:28px;
+  transition:all 0.2s;
+}
+.price-btn-outline { border:2px solid var(--purple); color:var(--purple); background:transparent; }
+.price-btn-outline:hover { background:var(--purple); color:#fff; }
+.price-btn-white { background:#fff; color:var(--purple); }
+.price-btn-white:hover { background:#f0eeff; transform:translateY(-2px); }
+
+/* ── HOW IT WORKS ── */
+.steps { display:flex; flex-direction:column; gap:0; margin-top:56px; max-width:640px; }
+.step { display:flex; gap:24px; padding-bottom:36px; position:relative; }
+.step:not(:last-child)::after {
+  content:''; position:absolute; left:19px; top:44px; bottom:0;
+  width:2px; background:var(--border);
+}
+.step-num {
+  width:40px; height:40px; border-radius:50%; flex-shrink:0;
+  background:var(--purple); color:#fff; display:flex; align-items:center;
+  justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:16px;
+}
+.step-body h3 { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; margin-bottom:6px; }
+.step-body p { font-size:14px; color:var(--muted); line-height:1.6; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background:#fff; }
+.testi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:48px; }
+.testi-card { background:var(--bg); border:1.5px solid var(--border); border-radius:20px; padding:24px; }
+.testi-stars { color:var(--gold); font-size:14px; margin-bottom:12px; }
+.testi-text { font-size:14px; line-height:1.7; color:var(--ink); margin-bottom:16px; font-style:italic; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.testi-avatar { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--purple-light)); display:flex; align-items:center; justify-content:center; font-size:16px; }
+.testi-name { font-size:13px; font-weight:700; }
+.testi-role { font-size:11px; color:var(--muted); }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%);
+  border-radius:32px; padding:72px 6%; text-align:center;
+  margin:0 6% 96px; color:#fff; position:relative; overflow:hidden;
+}
+.cta-section::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 60% at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+.cta-section h2 { font-family:'Syne',sans-serif; font-size:clamp(28px,5vw,48px); font-weight:800; letter-spacing:-1px; position:relative; }
+.cta-section p { font-size:18px; opacity:0.85; margin:16px auto 36px; max-width:500px; position:relative; }
+.cta-section .btn-white { background:#fff; color:var(--purple); padding:16px 40px; border-radius:100px; font-size:16px; font-weight:700; text-decoration:none; display:inline-block; transition:all 0.2s; position:relative; }
+.cta-section .btn-white:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,0.2); }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--ink); color:#fff; padding:48px 6% 32px;
+}
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.1); }
+.footer-brand .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:20px; color:#fff; }
+.footer-brand p { font-size:13px; color:rgba(255,255,255,0.5); margin-top:8px; max-width:260px; line-height:1.6; }
+.footer-links h4 { font-size:13px; font-weight:700; margin-bottom:12px; color:rgba(255,255,255,0.5); letter-spacing:0.5px; text-transform:uppercase; }
+.footer-links a { display:block; font-size:14px; color:rgba(255,255,255,0.7); text-decoration:none; margin-bottom:8px; transition:color 0.2s; }
+.footer-links a:hover { color:#fff; }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12px; color:rgba(255,255,255,0.4); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.reveal { opacity:0; transform:translateY(32px); transition:all 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── MOBILE ── */
+@media(max-width:768px) {
+  .nav-links { display:none; }
+  .hero-stats { gap:24px; }
+  .pricing-grid { grid-template-columns:1fr; }
+  .cta-section { margin:0 4% 64px; padding:48px 6%; }
+  .footer-top { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">NextGen<span>Data</span> AI</div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#topics">Topics</a>
+    <a href="#how">How it Works</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <a href="https://app.nextgendataaiacademy.com" class="nav-cta">Start Free →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    AI-Powered Data Learning Platform
+  </div>
+  <h1>Learn Data Analytics<br/><span class="accent">with your AI Tutor</span></h1>
+  <p class="hero-sub">Master SQL, Python, Power BI, Excel and more with Mira — your personal AI tutor. 500+ real interview questions. Job-ready in 90 days.</p>
+  <div class="hero-btns">
+    <a href="https://app.nextgendataaiacademy.com" class="btn-primary">🚀 Start Learning Free</a>
+    <a href="#how" class="btn-secondary">See How It Works</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Interview Questions</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Core Topics</div></div>
+    <div class="stat"><div class="stat-num">90</div><div class="stat-label">Days to Job-Ready</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">AI Tutor Access</div></div>
+  </div>
+
+  <!-- Mira Preview Card -->
+  <div class="mira-preview">
+    <div class="preview-header">
+      <div class="mira-avatar">🤖</div>
+      <div>
+        <div class="preview-name">Mira AI Tutor</div>
+        <div class="preview-sub">Data Analytics Expert</div>
+      </div>
+      <div class="preview-badge">● Online</div>
+    </div>
+    <div class="preview-msg">
+      Hi! I'm Mira 👋 What would you like to learn today? I can help you with SQL queries, Python Pandas, Power BI DAX formulas, Excel functions, and interview prep!
+    </div>
+    <div>
+      <span class="preview-chip">🗄️ SQL JOINs</span>
+      <span class="preview-chip">📊 Excel XLOOKUP</span>
+      <span class="preview-chip">📈 Power BI DAX</span>
+      <span class="preview-chip">🐍 Pandas GroupBy</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="reveal">
+    <div class="section-tag">Features</div>
+    <div class="section-h">Everything you need to<br/>land your dream job</div>
+    <p class="section-sub">One platform combining AI chat, practice problems, mock interviews and a curated question bank.</p>
+  </div>
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-ico">💬</div>
+      <div class="feature-h">AI Chat Tutor</div>
+      <p class="feature-p">Ask anything about SQL, Python, Power BI or Excel. Mira gives structured answers with code examples, real use cases, and interview tips.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-ico">🎯</div>
+      <div class="feature-h">Practice Mode</div>
+      <p class="feature-p">AI-generated challenges across all skill levels. Submit your answer, get instant scoring with detailed feedback and the optimized solution.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-ico">🎤</div>
+      <div class="feature-h">Mock Interviews</div>
+      <p class="feature-p">Practice with real interview questions from Google, Amazon, Microsoft. Voice input supported. Get scored on technical accuracy and communication.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-ico">❓</div>
+      <div class="feature-h">500+ Question Bank</div>
+      <p class="feature-p">Real questions from top companies across SQL, Python, Excel, Power BI, Tableau, and ML. Tap any question to get Mira's expert answer.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-ico">🗺️</div>
+      <div class="feature-h">Learning Path</div>
+      <p class="feature-p">Structured roadmap from beginner to job-ready. Track your progress across 6 subjects with unlockable topics and skill assessments.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-ico">📄</div>
+      <div class="feature-h">Resume Builder</div>
+      <p class="feature-p">AI-powered resume generator tailored for data roles. Get industry-standard bullet points, skills section, and professional summary instantly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="reveal">
+    <div class="section-tag">Curriculum</div>
+    <div class="section-h">Master every tool<br/>employers want</div>
+    <p class="section-sub">From SQL basics to advanced machine learning — all in one place, taught by Mira.</p>
+  </div>
+  <div class="topics-grid reveal">
+    <div class="topic-pill">🗄️ SQL & Databases</div>
+    <div class="topic-pill">🐍 Python & Pandas</div>
+    <div class="topic-pill">📊 Microsoft Excel</div>
+    <div class="topic-pill">📈 Power BI & DAX</div>
+    <div class="topic-pill">🎨 Tableau</div>
+    <div class="topic-pill">🤖 Machine Learning</div>
+    <div class="topic-pill">⚙️ Data Engineering</div>
+    <div class="topic-pill">☁️ Cloud & ETL</div>
+    <div class="topic-pill">📉 Statistics</div>
+    <div class="topic-pill">🔍 Data Storytelling</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="background:#fff;">
+  <div class="reveal">
+    <div class="section-tag">How It Works</div>
+    <div class="section-h">From zero to<br/>job-ready in 90 days</div>
+  </div>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Start with your topic</h3>
+        <p>Choose SQL, Python, Power BI, Excel or any topic. Mira builds a personalised learning path based on your current level.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Learn with AI explanations</h3>
+        <p>Ask questions in plain English. Mira replies with clear explanations, code examples, real business scenarios, and interview tips every time.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Practice with real problems</h3>
+        <p>Solve AI-generated challenges. Get instant scoring, mistake analysis, and the optimised solution — like having a senior mentor review your work.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Ace your interviews</h3>
+        <p>Practice 500+ real interview questions from top companies. Do mock interviews with voice input and get detailed performance feedback.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Get hired</h3>
+        <p>Generate your AI-powered data analyst resume. Walk into interviews confident — you've practised every question they'll ask.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="reveal">
+    <div class="section-tag">Pricing</div>
+    <div class="section-h">Simple, transparent pricing</div>
+    <p class="section-sub">Start free. Upgrade when you're ready. Cancel anytime.</p>
+  </div>
+  <div class="pricing-grid reveal">
+    <div class="price-card">
+      <div class="price-name">Free</div>
+      <div class="price-amount">₹0</div>
+      <div class="price-period">Forever free</div>
+      <div class="price-divider-dark"></div>
+      <div class="price-feature"><span class="check">✓</span> 50 AI messages per day</div>
+      <div class="price-feature"><span class="check">✓</span> Full question bank (500+)</div>
+      <div class="price-feature"><span class="check">✓</span> Practice mode</div>
+      <div class="price-feature"><span class="check">✓</span> Learning path access</div>
+      <div class="price-feature"><span class="check">✓</span> Basic interview prep</div>
+      <a href="https://app.nextgendataaiacademy.com" class="price-btn price-btn-outline">Start Free →</a>
+    </div>
+    <div class="price-card popular">
+      <div class="popular-tag">⭐ MOST POPULAR</div>
+      <div class="price-name" style="color:#fff;">Pro</div>
+      <div class="price-amount">₹499</div>
+      <div class="price-period" style="color:rgba(255,255,255,0.7);">per month</div>
+      <div class="price-divider"></div>
+      <div class="price-feature"><span class="check-white">✓</span> <strong>Unlimited</strong> AI messages</div>
+      <div class="price-feature"><span class="check-white">✓</span> GPT-4o mini (smarter answers)</div>
+      <div class="price-feature"><span class="check-white">✓</span> Everything in Free</div>
+      <div class="price-feature"><span class="check-white">✓</span> AI resume builder</div>
+      <div class="price-feature"><span class="check-white">✓</span> Advanced interview coaching</div>
+      <div class="price-feature"><span class="check-white">✓</span> Priority support</div>
+      <a href="https://app.nextgendataaiacademy.com" class="price-btn price-btn-white">Upgrade to Pro →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="reveal">
+    <div class="section-tag">Testimonials</div>
+    <div class="section-h">Loved by data learners</div>
+  </div>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Mira explained CALCULATE and filter context better than any YouTube video I watched. Got my Power BI job in 6 weeks!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><div class="testi-name">Priya Sharma</div><div class="testi-role">BI Developer, Bengaluru</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The SQL interview practice is incredible. I got asked the exact window function question Mira had me practice. Cracked my Amazon interview!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div><div class="testi-name">Rahul Mehta</div><div class="testi-role">Data Analyst, Mumbai</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Worth every rupee. I went from knowing nothing about Python to confidently working with Pandas in just 30 days of using Mira daily."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><div class="testi-name">Ananya Reddy</div><div class="testi-role">Data Engineer, Hyderabad</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Ready to become a data professional?</h2>
+  <p>Join thousands of learners mastering data analytics with Mira. Start free today.</p>
+  <a href="https://app.nextgendataaiacademy.com" class="btn-white">🚀 Start Learning Free</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">NextGen Data AI Academy</div>
+      <p>AI-powered data analytics learning platform. Master SQL, Python, Power BI, Excel and get hired.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Product</h4>
+      <a href="https://app.nextgendataaiacademy.com">Mira AI Tutor</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#topics">Curriculum</a>
+    </div>
+    <div class="footer-links">
+      <h4>Topics</h4>
+      <a href="#">SQL</a>
+      <a href="#">Python & Pandas</a>
+      <a href="#">Power BI</a>
+      <a href="#">Excel</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 NextGen Data AI Academy. All rights reserved.</span>
+    <span>nextgendataaiacademy.com | nextgendataaiacademy.in</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Preview chip click
+document.querySelectorAll('.preview-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    window.location.href = 'https://app.nextgendataaiacademy.com';
+  });
+});
+</script>
+</body>
+</html>
