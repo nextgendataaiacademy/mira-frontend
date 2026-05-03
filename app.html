@@ -11,7 +11,13 @@
 <link rel="manifest" href="/manifest.json"/>
 <link rel="apple-touch-icon" href="/icon-192.png"/>
 <title>Mira -- NextGen Data & AI Academy</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;}html,body,#root{height:100%;overflow:hidden;background:#f0f0f8;}#err{display:none;position:fixed;inset:0;background:#fff;padding:20px;font-family:monospace;font-size:12px;color:#ef4444;overflow:auto;white-space:pre-wrap;z-index:9999;}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{height:100%;}
+body{height:100%;overflow:hidden;background:#f0f0f8;}
+#root{height:100%;}
+#err{display:none;position:fixed;inset:0;background:#fff;padding:20px;font-family:monospace;font-size:12px;color:#ef4444;overflow:auto;white-space:pre-wrap;z-index:9999;}
+</style>
 </head><body>
 <div id="root"></div><div id="err"></div>
 <script>window.onerror=function(m,s,l,c,e){document.getElementById('err').style.display='block';document.getElementById('err').textContent='Error: '+m+'\nLine:'+l+'\n'+(e?e.stack:'');}</script>
@@ -27,7 +33,7 @@ Error generating stack: `+l.message+`
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:#f0f0f8;font-family:'Inter',sans-serif;color:#1a1a2e;overflow:hidden;}
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:#d0d0e8;border-radius:3px;}
-.app{display:flex;flex-direction:column;height:100vh;max-width:480px;margin:0 auto;background:#f0f0f8;position:relative;overflow:hidden;}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh;max-width:480px;margin:0 auto;background:#f0f0f8;position:relative;overflow:hidden;}
 /* TOPBAR */
 .topbar{padding:14px 20px 8px;background:#f0f0f8;flex-shrink:0;}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;}
@@ -56,7 +62,7 @@ body{background:#f0f0f8;font-family:'Inter',sans-serif;color:#1a1a2e;overflow:hi
 /* CONTENT */
 .content{flex:1;overflow-y:auto;overflow-x:hidden;padding-bottom:76px;}
 /* BOTTOM NAV */
-.bottom-nav{position:absolute;bottom:0;left:0;right:0;height:70px;background:#fff;border-top:1px solid #ededf5;display:flex;align-items:center;justify-content:space-around;padding:0 4px;box-shadow:0 -4px 20px rgba(0,0,0,0.06);z-index:100;}
+.bottom-nav{position:absolute;bottom:0;left:0;right:0;height:70px;background:#fff;border-top:1px solid #ededf5;display:flex;align-items:center;justify-content:space-around;padding:0 4px;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 20px rgba(0,0,0,0.06);z-index:100;}
 .nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:1;padding:8px 2px;border:none;background:transparent;transition:all 0.2s;position:relative;}
 .nav-item svg{width:21px;height:21px;stroke:#bbb;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke 0.2s;}
 .nav-item span{font-size:10px;font-weight:500;color:#bbb;transition:all 0.2s;}
