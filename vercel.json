@@ -1,6 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/app", "destination": "/app.html" },
-    { "source": "/app/(.*)", "destination": "/app.html" }
+  "functions": {
+    "api/chat.js": {
+      "runtime": "edge"
+    }
+  },
+  "routes": [
+    { "src": "/api/chat", "dest": "/api/chat.js" },
+    { "src": "/(.*)",     "dest": "/$1" }
   ]
 }
