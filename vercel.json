@@ -1,11 +1,5 @@
 {
-  "functions": {
-    "api/chat.js": {
-      "runtime": "edge"
-    }
-  },
-  "routes": [
-    { "src": "/api/chat", "dest": "/api/chat.js" },
-    { "src": "/(.*)",     "dest": "/$1" }
+  "rewrites": [
+    { "source": "/api/chat", "destination": "/api/chat.js" }
   ]
 }
